@@ -21,7 +21,7 @@ NC='\033[0m'
 SPINNER=("⣷" "⣯" "⣟" "⡿" "⢿" "⣻" "⣽" "⣾")
 
 # Configuration
-REPO_URL="https://github.com/sandyparadox59-alt/felmod/raw/main/noko.zip"
+REPO_URL="https://github.com/paradoxtools-v/base/raw/main/Felixv1.5.3.zip"
 LOG_FILE="/tmp/felix-install-$(date +%Y%m%d-%H%M%S).log"
 VERSION="2.2.0"
 INSTALL_DIR="/var/www/pterodactyl"
@@ -41,8 +41,8 @@ show_banner() {
     echo "║                                                          ║"
     echo "╠══════════════════════════════════════════════════════════╣"
     echo "║                PREMIUM INSTALLER v2.2.0                  ║"
-    echo "║           Created by: Mr. Felix Hasgawa                  ║"
-    echo "║         Telegram: @GlobalBotzXD                          ║"
+    echo "║             Created by: Mr. Felix Hasgawa                ║"
+    echo "║                Telegram: @GlobalBotzXD                   ║"
     echo "╚══════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
 }

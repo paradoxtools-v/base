@@ -277,23 +277,6 @@ extract_files() {
 }
 
 # Set permissions
-set_permissions() {
-    log_message "INFO" "Setting permissions..."
-    echo -e "${BLUE}→${NC} ${WHITE}Setting file permissions...${NC}"
-    
-    chown -R www-data:www-data "$INSTALL_DIR" 2>/dev/null
-    
-    if [ -d "$INSTALL_DIR/storage" ]; then
-        chmod -R 755 "$INSTALL_DIR/storage" 2>/dev/null
-    fi
-    
-    if [ -d "$INSTALL_DIR/bootstrap/cache" ]; then
-        chmod -R 755 "$INSTALL_DIR/bootstrap/cache" 2>/dev/null
-    fi
-    
-    log_message "SUCCESS" "Permissions set"
-    echo -e "${GREEN}✓${NC} ${WHITE}Permissions:${NC} Set"
-}
 
 # Run artisan commands
 run_artisan() {
@@ -397,17 +380,17 @@ show_summary() {
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
     
     echo -e "\n${GREEN}╔══════════════════════════════════════════════════════════╗${NC}"
-    echo -e "${GREEN}║               FELIX PRO INSTALLATION SUMMARY              ║${NC}"
+    echo -e "${GREEN}║               FELIX PRO INSTALLATION SUMMARY             ║${NC}"
     echo -e "${GREEN}╠══════════════════════════════════════════════════════════╣${NC}"
     echo -e "${GREEN}║${NC}                                                          ${GREEN}║${NC}"
     echo -e "${GREEN}║${NC}  ${WHITE}•${NC} ${GREEN}Installation Time${NC}  : ${WHITE}$timestamp${NC}"
     echo -e "${GREEN}║${NC}  ${WHITE}•${NC} ${GREEN}Node.js Version${NC}    : ${WHITE}$node_version${NC}"
     echo -e "${GREEN}║${NC}  ${WHITE}•${NC} ${GREEN}Yarn Version${NC}       : ${WHITE}$yarn_version${NC}"
     echo -e "${GREEN}║${NC}  ${WHITE}•${NC} ${GREEN}Install Directory${NC}  : ${WHITE}$INSTALL_DIR${NC}"
-    echo -e "${GREEN}║${NC}  ${WHITE}•${NC} ${GREEN}Log File${NC}           : ${WHITE}$LOG_FILE${NC}"
+    echo -e "${GREEN}║${NC}  ${WHITE}•${NC} ${GREEN}Felix Install${NC}           : ${WHITE}V1.2.0${NC}"
     echo -e "${GREEN}║${NC}                                                          ${GREEN}║${NC}"
     echo -e "${GREEN}╠══════════════════════════════════════════════════════════╣${NC}"
-    echo -e "${GREEN}║${NC}            ${WHITE}🎉 Installation Successful! 🎉${NC}             ${GREEN}║${NC}"
+    echo -e "${GREEN}║${NC}            ${WHITE}🎉 Installation Successful! 🎉${NC}                ${GREEN}║${NC}"
     echo -e "${GREEN}║${NC}       ${CYAN}Felix Pro has been installed successfully${NC}       ${GREEN}║${NC}"
     echo -e "${GREEN}║${NC}                                                          ${GREEN}║${NC}"
     echo -e "${GREEN}║${NC}          ${YELLOW}Need help? Telegram: @GlobalBotzXD${NC}          ${GREEN}║${NC}"
@@ -465,10 +448,9 @@ main() {
         "install_yarn:3. Installing Yarn"
         "download_resources:4. Downloading resources"
         "extract_files:5. Extracting files"
-        "set_permissions:6. Setting permissions"
-        "run_artisan:7. Running Laravel commands"
-        "build_assets:8. Building assets"
-        "cleanup:9. Cleaning up"
+        "run_artisan:6. Running Laravel commands"
+        "build_assets:7. Building assets"
+        "cleanup:8. Cleaning up"
     )
     
     # Execute all steps
